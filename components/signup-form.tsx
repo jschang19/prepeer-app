@@ -39,7 +39,7 @@ export default function SignupForm() {
               className="mb-3 mt-5 block text-xs font-medium text-zinc-400"
               htmlFor="email"
             >
-              Email
+              電子郵件
             </label>
             <div className="relative">
               <input
@@ -47,7 +47,7 @@ export default function SignupForm() {
                 id="email"
                 type="email"
                 name="email"
-                placeholder="Enter your email address"
+                placeholder="輸入你的電子郵件"
                 required
               />
             </div>
@@ -57,7 +57,7 @@ export default function SignupForm() {
               className="mb-3 mt-5 block text-xs font-medium text-zinc-400"
               htmlFor="password"
             >
-              Password
+              密碼
             </label>
             <div className="relative">
               <input
@@ -65,7 +65,7 @@ export default function SignupForm() {
                 id="password"
                 type="password"
                 name="password"
-                placeholder="Enter password"
+                placeholder="輸入密碼"
                 required
                 minLength={6}
               />
