@@ -9,14 +9,14 @@ import { Header } from '@/components/header'
 import { Toaster } from '@/components/ui/sonner'
 
 export const metadata = {
-  metadataBase: process.env.VERCEL_URL
-    ? new URL(`https://${process.env.VERCEL_URL}`)
+  metadataBase: process.env.AUTH_URL
+    ? new URL(`https://${process.env.AUTH_URL}`)
     : undefined,
   title: {
-    default: 'Next.js AI Chatbot',
-    template: `%s - Next.js AI Chatbot`
+    default: 'Prepeer 面試練習器 - 讓 AI 幫你準備大學面試',
+    template: `%s - Prepeer 面試練習器`
   },
-  description: 'An AI-powered chatbot template built with Next.js and Vercel.',
+  description: '用 Claude AI 幫你準備大學校系的二階面試準備',
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon-16x16.png',
