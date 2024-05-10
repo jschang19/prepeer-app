@@ -6,6 +6,7 @@ import { AuthError } from 'next-auth'
 import { z } from 'zod'
 import { kv } from '@/lib/upstash'
 import { ResultCode } from '@/lib/utils'
+import { verifyCaptchaToken } from '@/lib/recaptcha'
 
 export async function getUser(email: string) {
   const user = await kv.hgetall<User>(`user:${email}`)
@@ -16,8 +17,6 @@ interface Result {
   type: string
   resultCode: ResultCode
 }
-
-const verifyEndpoint = 'https://challenges.cloudflare.com/turnstile/v0/siteverify'
 
 export async function authenticate(
   _prevState: Result | undefined,
@@ -35,15 +34,7 @@ export async function authenticate(
       }
     }
 
-    const captchaResponse = await fetch(verifyEndpoint, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: `secret=${process.env.CAPTCHA_SECRET_KEY}&response=${token}`
-    })
-
-    const captchaResult = await captchaResponse.json()
+    const captchaResult = await verifyCaptchaToken(token)
 
     if (!captchaResult.success) {
       return {
