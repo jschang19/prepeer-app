@@ -2,6 +2,7 @@
 
 import { useFormState, useFormStatus } from 'react-dom'
 import { authenticate } from '@/app/login/actions'
+import CaptchaButton from './login-cloudflare-button'
 import Link from 'next/link'
 import { useEffect } from 'react'
 import { toast } from 'sonner'
@@ -69,6 +70,9 @@ export default function LoginForm() {
               />
             </div>
           </div>
+          <div className='mt-4 w-full'>
+            <CaptchaButton />
+          </div>
         </div>
         <LoginButton />
       </div>
@@ -77,7 +81,7 @@ export default function LoginForm() {
         href="/signup"
         className="flex flex-row gap-1 text-sm text-zinc-400"
       >
-        No account yet? <div className="font-semibold underline">Sign up</div>
+        還沒有帳號嗎？ <div className="font-semibold underline">立即註冊</div>
       </Link>
     </form>
   )
