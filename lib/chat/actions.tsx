@@ -154,6 +154,7 @@ async function submitUserMessage(content: string) {
       model: anthropic(modelToUse),
       initial: <SpinnerMessage />,
       system: PrepeerConfig.ai.systemDefaultPrompt,
+      maxTokens: 1200,
       messages: recentMessages,
       text: ({ content, done, delta }) => {
         if (!textStream) {
