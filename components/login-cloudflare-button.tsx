@@ -11,7 +11,7 @@ export default function CaptchaButton() {
     <Turnstile
       ref={ref}
       options={{ refreshExpired: 'manual' }}
-      siteKey={process.env.NEXT_PUBLIC_ENV_CAPTCHA_SITE_KEY}
+      siteKey={process.env.NEXT_PUBLIC_ENV_CAPTCHA_SITE_KEY!}
       onExpire={() => ref.current?.reset()}
     />
   )
