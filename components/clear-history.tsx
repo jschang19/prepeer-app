@@ -65,7 +65,7 @@ export function ClearHistory({
             }}
           >
             {isPending && <IconSpinner className="mr-2 animate-spin" />}
-            確定
+            刪除
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
