@@ -1,7 +1,6 @@
 import React from 'react'
 
 import { cn } from '@/lib/utils'
-import { ExternalLink } from '@/components/external-link'
 
 export function FooterText({ className, ...props }: React.ComponentProps<'p'>) {
   return (
@@ -12,11 +11,7 @@ export function FooterText({ className, ...props }: React.ComponentProps<'p'>) {
       )}
       {...props}
     >
-      Open source AI chatbot built with{' '}
-      <ExternalLink href="https://nextjs.org">Next.js</ExternalLink> and{' '}
-      <ExternalLink href="https://github.com/vercel/ai">
-        Vercel AI SDK
-      </ExternalLink>
+      AI 可能會提供不準確的資訊，所有生成的面試問題僅供練習用途，不一定為實際面試提問
       .
     </p>
   )

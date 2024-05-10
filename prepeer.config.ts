@@ -23,7 +23,11 @@ const config = {
     ],
     emptyScreen:{
       title: '準備好練習面試了嗎？',
-      contents: ['This is an AI chatbot app built with GPT-4, able to help you design a itinerary for your trip.', 'Feel free to ask me any question about your next trip. I can also recommend you the places to visit.']
+      contents: [
+        '🤖 Prepeer 是一個用來幫助高中生準備大學申請面試的 AI 聊天機器人',
+        '💬 你可以與 Prepeer 進行模擬面試，或是請它幫你修改你的自我介紹，請先說明你要申請的校系',
+        '🚨 AI 可能會提供不準確的資訊，所有生成的面試問題僅供練習用途，請自行查證並參閱相關資料'
+      ]
     }
   },
   toggle: {

@@ -37,19 +37,18 @@ export function ClearHistory({
       <AlertDialogTrigger asChild>
         <Button variant="ghost" disabled={!isEnabled || isPending}>
           {isPending && <IconSpinner className="mr-2" />}
-          Clear history
+          清除所有聊天
         </Button>
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+          <AlertDialogTitle>你確定嗎？</AlertDialogTitle>
           <AlertDialogDescription>
-            This will permanently delete your chat history and remove your data
-            from our servers.
+            這會清除你的所有聊天資料，並無法復原
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel disabled={isPending}>Cancel</AlertDialogCancel>
+          <AlertDialogCancel disabled={isPending}>取消</AlertDialogCancel>
           <AlertDialogAction
             disabled={isPending}
             onClick={event => {
@@ -66,7 +65,7 @@ export function ClearHistory({
             }}
           >
             {isPending && <IconSpinner className="mr-2 animate-spin" />}
-            Delete
+            確定
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>

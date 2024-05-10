@@ -25,21 +25,25 @@ export async function authenticate(
   try {
     const email = formData.get('email')
     const password = formData.get('password')
-    const token = formData.get('cf-turnstile-response')
+    
+    if(process.env.ENVIRONMENT !== 'development'){
+      console.log(process.env.ENVIRONMENT)
+      const token = formData.get('cf-turnstile-response')
 
-    if (!token) {
-      return {
-        type: 'error',
-        resultCode: ResultCode.InvalidCaptcha
+      if (!token) {
+        return {
+          type: 'error',
+          resultCode: ResultCode.InvalidCaptcha
+        }
       }
-    }
 
-    const captchaResult = await verifyCaptchaToken(token)
+      const captchaResult = await verifyCaptchaToken(token)
 
-    if (!captchaResult.success) {
-      return {
-        type: 'error',
-        resultCode: ResultCode.InvalidCaptcha
+      if (!captchaResult.success) {
+        return {
+          type: 'error',
+          resultCode: ResultCode.InvalidCaptcha
+        }
       }
     }
 

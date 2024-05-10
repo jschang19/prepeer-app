@@ -26,10 +26,10 @@ export function HeaderAddChatButton(){
             }}
           >
             <IconPlus className='size-5' />
-            <span className="sr-only">New Chat</span>
+            <span className="sr-only">新增聊天室</span>
           </Button>
         </TooltipTrigger>
-        <TooltipContent>New Chat</TooltipContent>
+        <TooltipContent>新增聊天室</TooltipContent>
     </Tooltip>
     </>
   )

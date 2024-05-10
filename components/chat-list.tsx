@@ -25,15 +25,15 @@ export function ChatList({ messages, session, isShared }: ChatList) {
             </div>
             <div className="ml-4 flex-1 space-y-2 overflow-hidden px-1">
               <p className="text-muted-foreground leading-normal">
-                Please{' '}
+                請{' '}
                 <Link href="/login" className="underline">
-                  log in
+                  登入
                 </Link>{' '}
-                or{' '}
+                或{' '}
                 <Link href="/signup" className="underline">
-                  sign up
+                  註冊帳號
                 </Link>{' '}
-                to save and revisit your chat history!
+                ，才能保留聊天記錄，並使用更高級的 AI 模型！
               </p>
             </div>
           </div>
