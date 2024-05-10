@@ -155,6 +155,7 @@ async function submitUserMessage(content: string) {
       initial: <SpinnerMessage />,
       system: PrepeerConfig.ai.systemDefaultPrompt,
       maxTokens: 1200,
+      temperature: 0.7,
       messages: recentMessages,
       text: ({ content, done, delta }) => {
         if (!textStream) {
