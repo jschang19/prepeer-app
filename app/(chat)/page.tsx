@@ -6,7 +6,7 @@ import { Session } from '@/lib/types'
 import { getMissingKeys } from '@/app/actions'
 
 export const metadata = {
-  title: 'Next.js AI Chatbot'
+  title: 'Prepeer'
 }
 
 export const runtime = 'edge';
