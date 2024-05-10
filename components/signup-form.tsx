@@ -9,6 +9,8 @@ import { IconSpinner } from './ui/icons'
 import { getMessageFromCode } from '@/lib/utils'
 import { useRouter } from 'next/navigation'
 
+import CaptchaButton from './login-cloudflare-button'
+
 export default function SignupForm() {
   const router = useRouter()
   const [result, dispatch] = useFormState(signup, undefined)
@@ -30,7 +32,7 @@ export default function SignupForm() {
       className="flex flex-col items-center gap-4 space-y-3"
     >
       <div className="w-full flex-1 rounded-lg border bg-white px-6 pb-4 pt-8 shadow-md md:w-96 dark:bg-zinc-950">
-        <h1 className="mb-3 text-2xl font-bold">Sign up for an account!</h1>
+        <h1 className="mb-3 text-2xl font-bold">註冊帳號</h1>
         <div className="w-full">
           <div>
             <label
@@ -69,13 +71,16 @@ export default function SignupForm() {
               />
             </div>
           </div>
+          <div className="mt-4">
+            <CaptchaButton />
+          </div>
         </div>
         <LoginButton />
       </div>
 
       <Link href="/login" className="flex flex-row gap-1 text-sm text-zinc-400">
-        Already have an account?
-        <div className="font-semibold underline">Log in</div>
+        已經有帳號了？
+        <div className="font-semibold underline">登入</div>
       </Link>
     </form>
   )
@@ -89,7 +94,7 @@ function LoginButton() {
       className="my-4 flex h-10 w-full flex-row items-center justify-center rounded-md bg-zinc-900 p-2 text-sm font-semibold text-zinc-100 hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200"
       aria-disabled={pending}
     >
-      {pending ? <IconSpinner /> : 'Create account'}
+      {pending ? <IconSpinner /> : '建立帳號'}
     </button>
   )
 }

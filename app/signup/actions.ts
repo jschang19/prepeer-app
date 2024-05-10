@@ -4,6 +4,7 @@ import { signIn } from '@/auth'
 import { ResultCode, getStringFromBuffer } from '@/lib/utils'
 import { z } from 'zod'
 import { kv } from '@/lib/upstash'
+import { verifyCaptchaToken } from '@/lib/recaptcha'
 import { getUser } from '../login/actions'
 import { AuthError } from 'next-auth'
 
@@ -47,6 +48,23 @@ export async function signup(
 ): Promise<Result | undefined> {
   const email = formData.get('email') as string
   const password = formData.get('password') as string
+  const token = formData.get('cf-turnstile-response')
+
+  if (!token) {
+    return {
+      type: 'error',
+      resultCode: ResultCode.InvalidCaptcha
+    }
+  }
+
+  const captchaResult = await verifyCaptchaToken(token)
+
+  if (!captchaResult.success) {
+    return {
+      type: 'error',
+      resultCode: ResultCode.InvalidCaptcha
+    }
+  }
 
   const parsedCredentials = z
     .object({
