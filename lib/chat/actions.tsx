@@ -158,7 +158,7 @@ async function submitUserMessage(content: string) {
       model: anthropic(modelToUse),
       initial: <SpinnerMessage />,
       system: PrepeerConfig.ai.systemDefaultPrompt,
-      maxTokens: 1200,
+      maxTokens: 800,
       temperature: 0.7,
       messages: recentMessages,
       text: ({ content, done, delta }) => {
@@ -340,7 +340,7 @@ function getRecentMessages(messages: {
   if (startIndex !== -1) {
     const recentMessages = messages.slice(startIndex + 1);
 
-    // If the length of recentMessages is less than 15, keep the original messages
+    // If the length of recentMessages is less than 12, keep the original messages
     if (recentMessages.length < 12) {
       return messages;
     } else {
