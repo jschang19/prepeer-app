@@ -48,7 +48,7 @@ export default async function IndexPage() {
           </div>
           <div className="pt-6 pb-12 flex flex-col gap-2 items-center justify-center w-full">
             <div>本網站由 <ExternalLink href="https://jcshawn.com/about">@cjs.shawn</ExternalLink> 開發</div>
-            <div>本站開源程式碼 <ExternalLink href="https://jcshawn.com/about">GitHub Repo</ExternalLink></div>
+            <div>本站開源程式碼 <ExternalLink href="https://github.com/jschang19/prepeer-app">GitHub Repo</ExternalLink></div>
           </div>
         </div>
       </>
