@@ -8,6 +8,8 @@ import { Providers } from '@/components/providers'
 import { Header } from '@/components/header'
 import { Toaster } from '@/components/ui/sonner'
 
+import { GoogleAnalytics } from '@next/third-parties/google'
+
 export const metadata = {
   metadataBase: process.env.AUTH_URL
     ? new URL(`https://${process.env.AUTH_URL}`)
@@ -52,13 +54,14 @@ export default function RootLayout({ children }: RootLayoutProps) {
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex flex-col min-h-screen">
+          <div className="flex flex-col min-h-screen h-screen">
             <Header />
-            <main className="flex flex-col flex-1bg-white dark:bg-zinc-900">{children}</main>
+            <main className="flex flex-col h-full flex-1bg-white dark:bg-zinc-900">{children}</main>
           </div>
           <TailwindIndicator />
         </Providers>
       </body>
+      <GoogleAnalytics gaId="G-XYZ" />
     </html>
   )
 }
