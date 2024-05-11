@@ -22,7 +22,7 @@ export default async function SignupPage() {
   return (
     <div className="flex flex-col gap-4 p-4 h-full justify-center items-center">
       <h6 className="font-semibold text-xl">Email 驗證連結已寄出！</h6>
-      <div class="leading-normal text-muted-foreground">
+      <div className="leading-normal text-muted-foreground">
           請點擊信件的驗證連結，即可完成註冊
       </div>
     </div>

@@ -25,8 +25,8 @@ export default async function VerifyPage({ params }: VerifyPageProps) {
     
       { isSuccess ? (
         <>
-          <div class="leading-normal text-muted-foreground">
-            請重新完成登入，即可開始練習面試
+          <div className="leading-normal text-muted-foreground">
+            請重新完成登入，即可開始使用
           </div>
           <Button>
             <Link href="/login">登入</Link>
@@ -34,7 +34,7 @@ export default async function VerifyPage({ params }: VerifyPageProps) {
         </>
       ) : 
         <>
-          <div class="leading-normal text-muted-foreground">
+          <div className="leading-normal text-muted-foreground">
             驗證錯誤，請重新註冊帳號取得新驗證連結
           </div> 
           <Button>
