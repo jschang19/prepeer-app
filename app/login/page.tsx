@@ -5,6 +5,13 @@ import { redirect } from 'next/navigation'
 
 export const runtime = 'edge';
 
+export const metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+
 export default async function LoginPage() {
   const session = (await auth()) as Session
 

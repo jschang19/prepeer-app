@@ -2,6 +2,13 @@ import { verifyCode } from "./actions"
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 
+export const metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+
 export interface VerifyPageProps {
   params: {
     code: string
