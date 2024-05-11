@@ -58,6 +58,15 @@ export async function authenticate(
       })
 
     if (parsedCredentials.success) {
+
+      const isVerified = await kv.get(`is_user_verified:${email}`)
+      if(!isVerified){
+        return {
+          type: 'success',
+          resultCode: ResultCode.NotVerified
+        }
+      }
+
       await signIn('credentials', {
         email,
         password,

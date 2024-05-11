@@ -20,8 +20,7 @@ export default function SignupForm() {
       if (result.type === 'error') {
         toast.error(getMessageFromCode(result.resultCode))
       } else {
-        toast.success(getMessageFromCode(result.resultCode))
-        router.refresh()
+        router.push('/signup/success')
       }
     }
   }, [result, router])

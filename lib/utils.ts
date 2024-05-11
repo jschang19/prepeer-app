@@ -69,7 +69,8 @@ export enum ResultCode {
   UnknownError = 'UNKNOWN_ERROR',
   UserCreated = 'USER_CREATED',
   UserLoggedIn = 'USER_LOGGED_IN',
-  InvalidCaptcha = 'INVALID_CAPTCHA'
+  InvalidCaptcha = 'INVALID_CAPTCHA',
+  NotVerified = 'NOT_VERIFIED'
   
 }
 
@@ -89,5 +90,7 @@ export const getMessageFromCode = (resultCode: string) => {
       return 'Logged in!'
     case ResultCode.InvalidCaptcha:
       return 'Captcha error, please try again!'
+      case ResultCode.NotVerified:
+        return 'Please verify your email first, check your mail box.'
   }
 }
