@@ -14,7 +14,7 @@ import PrepeerConfig from '@/prepeer.config';
 
 export const metadata = {
   metadataBase: process.env.AUTH_URL
-    ? new URL(`https://${process.env.AUTH_URL}`)
+    ? new URL(`${process.env.AUTH_URL}`)
     : undefined,
   title: {
     default: 'Prepeer 面試練習器 - 讓 AI 幫你準備大學面試',
