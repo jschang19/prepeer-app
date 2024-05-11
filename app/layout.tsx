@@ -20,12 +20,28 @@ export const metadata = {
     default: 'Prepeer 面試練習器 - 讓 AI 幫你準備大學面試',
     template: `%s - Prepeer 面試練習器`
   },
-  description: '用 Claude AI 幫你準備大學校系的二階面試準備',
+  description: '用 AI 幫你準備大學校系的二階面試準備',
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon-16x16.png',
     apple: '/apple-touch-icon.png'
+  },
+  openGraph: {
+    title: 'Prepeer 面試練習器 - 讓 AI 幫你準備大學面試',
+    description: '用 AI 幫你準備大學校系的二階面試準備',
+    url: 'https://prepeer.app',
+    siteName: 'Prepeer',
+    images: [
+      {
+        url: 'https://prepeer.app/opengraph-image.png', // Must be an absolute URL
+        width: 1686,
+        height: 882,
+      },
+    ],
+    locale: 'zh_TW',
+    type: 'website',
   }
+  
 }
 
 export const viewport = {
