@@ -8,7 +8,9 @@ import { Providers } from '@/components/providers'
 import { Header } from '@/components/header'
 import { Toaster } from '@/components/ui/sonner'
 
+
 import { GoogleAnalytics } from '@next/third-parties/google'
+import PrepeerConfig from '@/prepeer.config';
 
 export const metadata = {
   metadataBase: process.env.AUTH_URL
@@ -61,7 +63,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <TailwindIndicator />
         </Providers>
       </body>
-      <GoogleAnalytics gaId="G-XYZ" />
+      <GoogleAnalytics gaId={PrepeerConfig.gaID} />
     </html>
   )
 }

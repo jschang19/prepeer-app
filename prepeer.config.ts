@@ -1,5 +1,6 @@
 const config = {
   requiredEnvs: ['ANTHROPIC_API_KEY', 'UPSTASH_REDIS_REST_URL', 'UPSTASH_REDIS_REST_TOKEN'],
+  gaID: 'G-62P5BGF1WB',
   ai: {
     model: 'claude-3-opus-20240229',
     logoutModel: 'claude-3-haiku-20240307',
