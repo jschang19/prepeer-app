@@ -15,6 +15,8 @@ export interface VerifyPageProps {
   }
 }
 
+export const runtime = 'edge';
+
 export default async function VerifyPage({ params }: VerifyPageProps) {
   const result = await verifyCode(params.code)
   const isSuccess = (result === "success");
