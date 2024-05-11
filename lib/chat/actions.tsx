@@ -120,6 +120,10 @@ async function submitUserMessage(content: string) {
 
   try {
     const session = await auth()
+    if (!session?.user) {
+      return;
+    }
+
     const userId = session?.user?.id || null;
     const rateLimitResult = await checkRateLimit(userId);
 
@@ -144,7 +148,7 @@ async function submitUserMessage(content: string) {
     let textStream: undefined | ReturnType<typeof createStreamableValue<string>>
     let textNode: undefined | React.ReactNode
 
-    let modelToUse = (session && session.user) ? PrepeerConfig.ai.model : PrepeerConfig.ai.logoutModel
+    let modelToUse = PrepeerConfig.ai.model
   
     const messages = [...aiState.get().messages.map((message: any) => ({ role: message.role, content: message.content, name: message.name }))];
 

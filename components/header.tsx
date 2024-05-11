@@ -2,7 +2,7 @@ import * as React from 'react'
 import Link from 'next/link'
 
 import { auth } from '@/auth'
-import { Button, buttonVariants } from '@/components/ui/button'
+import { Button } from '@/components/ui/button'
 import {
   IconNextChat,
   IconSeparator,
@@ -26,27 +26,21 @@ async function UserOrLogin() {
           </SidebarMobile>
           <SidebarToggle />
         </>
-      ) : (
-        <Link href="/new" rel="nofollow">
-          <IconNextChat className="size-7 mr-1 dark:hidden" inverted />
-          <IconNextChat className="hidden size-7 mr-1 dark:block" />
-        </Link>
-      )}
+      ) : null}
       <div className="flex items-center">
-        <IconSeparator className="size-6 text-muted-foreground/50" />
         {session?.user ? (
-          <UserMenu user={session.user} />
-        ) : (
-          <Button variant="link" asChild className="-ml-2">
-            <Link href="/login">登入</Link>
-          </Button>
-        )}
+          <>
+            <IconSeparator className="size-6 text-muted-foreground/50" />
+            <UserMenu user={session.user} />
+          </>
+        ) : null}
       </div>
     </>
   )
 }
 
-export function Header() {
+export async function Header() {
+  const session = (await auth()) as Session
   return (
     <header className="sticky top-0 z-50 grid grid-cols-[1fr_50vw_1fr] items-center w-full h-16 px-4 border-b shrink-0 bg-gradient-to-b from-background/10 via-background/50 to-background/80 backdrop-blur-xl">
       <div className="flex items-center">
@@ -58,7 +52,16 @@ export function Header() {
         <div className="font-bold text-xl">Prepeer</div>
       </div>
       <div className="flex justify-end">
-        <HeaderAddChatButton />
+        { session?.user ? 
+          (
+            <HeaderAddChatButton />
+          ) : 
+          ( 
+            <Button asChild className="ml-4">
+              <Link href="/login">登入</Link>
+            </Button>
+          )
+        }
       </div>
     </header>
   )
