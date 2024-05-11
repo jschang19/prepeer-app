@@ -72,7 +72,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex flex-col min-h-screen h-screen">
+          <div className="flex flex-col min-h-screen">
             <Header />
             <main className="flex flex-col h-full flex-1bg-white dark:bg-zinc-900">{children}</main>
           </div>
