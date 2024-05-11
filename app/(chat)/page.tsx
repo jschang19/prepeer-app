@@ -25,8 +25,8 @@ export default async function IndexPage() {
   if (!session?.user) {
     return (
       <>
-        <div className="flex flex-col h-full">
-          <div className="pt-24 md:pt-32 pb-20 space-y-20 md:space-y-28 lg:space-y-40 container px-4 md:px-8 lg:px-16 xl:px-20">
+        <div className="flex flex-col size-full">
+          <div className="flex flex-1 pt-24 md:pt-20 pb-20 space-y-20 md:space-y-28 lg:space-y-40 container px-4 md:px-8 lg:px-16 xl:px-24">
             <section className="flex flex-col gap-10 md:flex-row text-center md:gap-20 md:text-start">
               <div className="flex flex-col flex-1 self-center gap-4 md:gap-8">
                 <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold space-y-2">
@@ -43,7 +43,7 @@ export default async function IndexPage() {
                 </Link>
                 <p className="font-light text-xs text-muted-foreground max-w-sm text-left mt-4">AI 語言模型的資訊可能有誤，生成的題目並不代表實際一定會被問的問題，請另外搭配其他相關資料參閱</p>
               </div>
-              <Image src="/images/demo.jpeg" alt="Demo Image" width={1989} height={1170} className="max-sm:px-6 md:w-[30%] shadow-lg"/>
+              <Image src="/images/demo.jpeg" alt="Demo Image" width={1989} height={1170} className="max-sm:px-6 md:w-[33%] shadow-lg"/>
             </section>
           </div>
           <div className="pt-6 pb-12 flex flex-col gap-2 items-center justify-center w-full">

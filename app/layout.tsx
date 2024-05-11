@@ -57,7 +57,7 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="zh-tw" suppressHydrationWarning>
       <body
         className={cn(
           'font-sans antialiased',
@@ -74,7 +74,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         >
           <div className="flex flex-col min-h-screen">
             <Header />
-            <main className="flex flex-col h-full flex-1bg-white dark:bg-zinc-900">{children}</main>
+            <main className="flex flex-col size-full flex-1 bg-white dark:bg-zinc-900">{children}</main>
           </div>
           <TailwindIndicator />
         </Providers>
