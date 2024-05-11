@@ -36,11 +36,11 @@ export default async function IndexPage() {
                 <p className="md:text-lg lg:text-xl xl:text-2xl opacity-60 font-medium max-w-[520px] leading-normal">
                   Prepeer 提供進階版 Claude AI 語言模型<br />為協助高三生準備大學面試所打造<br />用手機也能練習二階面試
                 </p>
-                <Button className="max-w-[250px] w-full h-10 max-md:mx-auto">
-                  <Link href="/login" rel="nofollow">
+                <Link href="/login" rel="nofollow" passHref>
+                  <Button className="max-w-[250px] w-full h-10 max-md:mx-auto">
                     開始使用
-                  </Link>
-                </Button>
+                  </Button>
+                </Link>
                 <p className="font-light text-xs text-muted-foreground max-w-sm text-left mt-4">AI 語言模型的資訊可能有誤，生成的題目並不代表實際一定會被問的問題，請另外搭配其他相關資料參閱</p>
               </div>
               <Image src="/images/demo.jpeg" alt="Demo Image" width={1989} height={1170} className="max-sm:px-6 md:w-[30%] shadow-lg"/>
