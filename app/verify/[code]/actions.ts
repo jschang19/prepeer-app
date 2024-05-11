@@ -16,7 +16,7 @@ export async function verifyCode(code:string) {
   }
   catch(err)
   {
-    console.err(`verify code error`)
+    console.error(`verify code error`)
     return null;
   }
 }
