@@ -1,7 +1,9 @@
+import { auth } from '@/auth'
 import { clearChats, getChats } from '@/app/actions'
 import { ClearHistory } from '@/components/clear-history'
+import { UserMenu } from '@/components/user-menu'
 import { SidebarItems } from '@/components/sidebar-items'
-import { ThemeToggle } from '@/components/theme-toggle'
+
 import { cache } from 'react'
 
 interface SidebarListProps {
@@ -14,7 +16,7 @@ const loadChats = cache(async (userId?: string) => {
 })
 
 export async function SidebarList({ userId }: SidebarListProps) {
-  const chats = await loadChats(userId)
+  const [chats, session] = await Promise.all([loadChats(userId),auth()])
 
   return (
     <div className="flex flex-1 flex-col overflow-hidden">
@@ -30,7 +32,7 @@ export async function SidebarList({ userId }: SidebarListProps) {
         )}
       </div>
       <div className="flex items-center justify-between p-4">
-        <ThemeToggle />
+        <UserMenu user={session.user} />
         <ClearHistory clearChats={clearChats} isEnabled={chats?.length > 0} />
       </div>
     </div>

@@ -1,13 +1,8 @@
 import * as React from 'react'
 import Link from 'next/link'
-
 import { auth } from '@/auth'
+
 import { Button } from '@/components/ui/button'
-import {
-  IconNextChat,
-  IconSeparator,
-} from '@/components/ui/icons'
-import { UserMenu } from '@/components/user-menu'
 import { SidebarMobile } from './sidebar-mobile'
 import { SidebarToggle } from './sidebar-toggle'
 import { ChatHistory } from './chat-history'
@@ -27,14 +22,6 @@ async function UserOrLogin() {
           <SidebarToggle />
         </>
       ) : null}
-      <div className="flex items-center">
-        {session?.user ? (
-          <>
-            <IconSeparator className="size-6 text-muted-foreground/50" />
-            <UserMenu user={session.user} />
-          </>
-        ) : null}
-      </div>
     </>
   )
 }
