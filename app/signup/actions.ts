@@ -76,7 +76,7 @@ export async function signup(
   const email = formData.get('email') as string
   const password = formData.get('password') as string
   
-  if(process.env.NODE_ENV !== 'development'){
+  if(process.env.ENVIRONMENT !== 'development'){
     const token = formData.get('cf-turnstile-response')
 
     if (!token) {
