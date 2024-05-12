@@ -40,8 +40,8 @@ export const metadata = {
     ],
     locale: 'zh_TW',
     type: 'website',
-  }
-  
+  },
+  manifest: "/manifest.webmanifest"
 }
 
 export const viewport = {
