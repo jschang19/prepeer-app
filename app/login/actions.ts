@@ -26,7 +26,7 @@ export async function authenticate(
     const email = formData.get('email')
     const password = formData.get('password')
     
-    if(process.env.ENVIRONMENT !== 'development'){
+    if(process.env.NODE_ENV !== 'development'){
       const token = formData.get('cf-turnstile-response')
 
       if (!token) {
