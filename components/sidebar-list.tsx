@@ -3,6 +3,7 @@ import { clearChats, getChats } from '@/app/actions'
 import { ClearHistory } from '@/components/clear-history'
 import { UserMenu } from '@/components/user-menu'
 import { SidebarItems } from '@/components/sidebar-items'
+import type { Session } from '@/lib/types'
 
 import { cache } from 'react'
 
@@ -16,7 +17,12 @@ const loadChats = cache(async (userId?: string) => {
 })
 
 export async function SidebarList({ userId }: SidebarListProps) {
-  const [chats, session] = await Promise.all([loadChats(userId),auth()])
+  const chats = await getChats(userId)
+  const session = (await auth()) as Session
+
+  if(!session || !session.user) {
+    return null
+  }
 
   return (
     <div className="flex flex-1 flex-col overflow-hidden">
