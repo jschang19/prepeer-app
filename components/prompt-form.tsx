@@ -92,6 +92,7 @@ export function PromptForm({
           name="message"
           rows={1}
           value={input}
+          maxLength={350}
           onChange={e => setInput(e.target.value)}
         />
         <div className="absolute right-4 top-[16px] sm:top-[13px]">

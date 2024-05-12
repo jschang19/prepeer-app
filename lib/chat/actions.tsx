@@ -131,6 +131,13 @@ async function submitUserMessage(content: string) {
       return rateLimitResult
     }
 
+    if(content.length >= 350){
+      return {
+        error: 'unexpected error',
+      }
+    }
+
+
     const aiState = getMutableAIState<typeof AI>()
 
     aiState.update({
