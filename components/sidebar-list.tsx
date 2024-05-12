@@ -17,7 +17,7 @@ const loadChats = cache(async (userId?: string) => {
 })
 
 export async function SidebarList({ userId }: SidebarListProps) {
-  const chats = await getChats(userId)
+  const chats = await loadChats(userId)
   const session = (await auth()) as Session
 
   if(!session || !session.user) {
